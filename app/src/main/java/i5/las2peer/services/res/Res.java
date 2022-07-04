@@ -125,6 +125,59 @@ public class Res extends RESTService {
     return null;
   }
 
+  /**
+   * 
+   * getDishById
+   *
+   * 
+   * @param id  a String
+   * 
+   * @return Response 
+   * 
+   */
+  @GET
+  @Path("/dishes/{id}")
+  @Produces(MediaType.APPLICATION_JSON)
+  @Consumes(MediaType.TEXT_PLAIN)
+  @ApiResponses(value = {
+       @ApiResponse(code = HttpURLConnection.HTTP_NOT_FOUND, message = "nf"),
+       @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "ok")
+  })
+  @ApiOperation(value = "getDishById", notes = " ")
+  public Response getDishById(@PathParam("id") String id) {
+
+
+
+
+     
+    // service method invocations
+
+     
+
+
+
+
+    // nf
+    boolean nf_condition = true;
+    if(nf_condition) {
+      JSONObject nf = new JSONObject();
+
+      
+
+      return Response.status(HttpURLConnection.HTTP_NOT_FOUND).entity(nf.toJSONString()).build();
+    }
+    // ok
+    boolean ok_condition = true;
+    if(ok_condition) {
+      JSONObject ok = new JSONObject();
+
+      
+
+      return Response.status(HttpURLConnection.HTTP_OK).entity(ok.toJSONString()).build();
+    }
+    return null;
+  }
+
 
 
   }
